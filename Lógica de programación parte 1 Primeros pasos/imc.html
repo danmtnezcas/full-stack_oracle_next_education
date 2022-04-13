@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+
+<h1>PROGRAMA CALCULO IMC</h1>
+
+<body>
+
+	<script type="text/javascript">
+
+		function saltarLinea() {
+
+			document.write("<br>");
+			document.write("<br>");
+			document.write("<br>");
+
+		}
+
+		function imprimir(frase) {
+
+			document.write(frase);
+			saltarLinea();
+
+		}
+
+		function calcularImc(peso, altura) {
+
+			return Math.round(peso / (altura * altura));
+			
+		}
+
+		imprimir("El promedio del IMC calculado de Christian y Felipe es: " + (calcularImc(71, 1.72) + calcularImc(75, 1.73)) / 2);
+		imprimir("El promedio del IMC calculado de Gabriela y Luisa es: " + (calcularImc(65, 1.68) + calcularImc(55, 1.60)) / 2);
+
+	</script>
+
+</body>
