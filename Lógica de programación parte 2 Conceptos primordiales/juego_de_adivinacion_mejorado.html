@@ -1,0 +1,57 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA JUEGO DE ADIVINACION </h1>
+
+<body>
+
+    <script>
+
+        function saltarLinea() {
+
+            document.write("<br>");    
+            document.write("<br>");    
+            document.write("<br>"); 
+            
+        }  
+    
+        function imprimir(frase) {
+
+            document.write(frase);
+            saltarLinea();
+
+        }
+    
+        function sortea(n) {
+
+            return Math.round(Math.random() * n)
+
+        }
+    
+        var numeroPensado = sortea(10);
+        var numeroLanzado = parseInt(prompt("Ingrese un número entre 0-10"))
+    
+        if (numeroPensado == numeroLanzado){
+
+                alert("Usted acertó")
+
+        } 
+        
+        else {
+
+            if (numeroLanzado < numeroPensado) {
+
+                alert("Usted erró, el número pensado era mayor");
+
+            } 
+            
+            else {
+
+                alert("Usted erró, el número pensado era menor");
+
+            } 
+
+        }
+    
+    </script>
+
+</body>
