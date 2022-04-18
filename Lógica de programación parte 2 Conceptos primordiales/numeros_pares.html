@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA - IMPRIMIR NUMEROS PARES</h1>
+
+<body>
+
+    <script>
+
+        function saltarLinea() {
+
+            document.write("<br>");    
+            document.write("<br>");    
+            document.write("<br>"); 
+            
+        }  
+    
+        function imprimir(frase) {
+
+            document.write(frase);
+            saltarLinea();
+
+        }
+
+        var limite = parseInt(prompt("Introduce un número: "));
+        var contador = 2;
+
+        while(contador <= limite) {
+
+            imprimir(contador);
+            contador += 2;
+
+        }
+
+    </script>
+
+</body>
