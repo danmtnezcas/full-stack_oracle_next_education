@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<body>
+
+    <h1>PROGRAMA -SIMULACIÓN INICIO DE SESIÓN</h1>
+
+    <script>
+
+        var inicioDeSesionRegistrado = "alura";
+        var contrasenhaRegistrada = "alura123";
+
+        var maximoIntentos = 3;
+        var intento = 1;
+
+        while(intento <= maximoIntentos) {
+
+            var inicioDeSesionIngresado = prompt("Ingrese su usuario :");
+            var contrasenhaIngresada = prompt("Ingrese su contraseña:");
+
+            if(inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada) {
+            
+                alert("Bienvenido al sistema " + inicioDeSesionRegistrado);
+                document.write("Bienvenido al sistema " + inicioDeSesionRegistrado);
+                break;
+    
+            } else {
+
+                alert("Inicio de sesión inválido. Favor intente de nuevo");
+                
+            }
+
+            intento ++;
+
+        }
+
+        if(inicioDeSesionRegistrado != inicioDeSesionIngresado || contrasenhaRegistrada != contrasenhaIngresada) {
+            document.write("Acceso denegado por demasiados intentos erróneos")
+        }
+
+    </script>
+</body>
