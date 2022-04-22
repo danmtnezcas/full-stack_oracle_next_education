@@ -1,13 +1,20 @@
 <body>
     
-    <canvas width="600" height="400">
-
-    </canvas>
+    <canvas width="600" height="400"> </canvas>
 
     <script type="text/javascript">
 
         var pantalla = document.querySelector("canvas"); // Conexión con la etiqueta canvas de HTML con JavaScript
         var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "white"; // Propiedad o caracteristica
+        pincel.fillRect(0,0,600,400); // Funcion
+
+        pincel.fillStyle = "green"; // Propiedad o caracteristica
+        pincel.fillRect(0,0,200,400); // Funcion
+
+        pincel.fillStyle = "red"; // Propiedad o caracteristica
+        pincel.fillRect(400,0,200,400); // Funcion
         
     </script>
 
