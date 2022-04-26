@@ -1,0 +1,32 @@
+<body>
+    
+    <canvas width="600" height="400"></canvas> <!-- Crear una pizarra -->
+
+    <script type="text/javascript">
+        
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        // Cabeza
+        pincel.fillStyle = "darkgreen";
+        pincel.fillRect(0,0,350,300);
+
+        // Ojos izquierdo
+        pincel.fillStyle = "black";
+        pincel.fillRect(50,60,90,90);
+
+        // Ojos derecho
+        pincel.fillRect(210,60,90,90);
+
+        // Nariz
+        pincel.fillRect(140,150,70,100);
+
+        // Boca izquierda
+        pincel.fillRect(100,190,40,110);
+
+        // Boca derecha
+        pincel.fillRect(210,190,40,110);
+
+    </script>
+
+</body>
