@@ -4,23 +4,59 @@
 
 <head>
 
+    <!-- Created by: Daniel Alejandro Martinez Castro -->
+    <!-- Email: danmtnezcas@outlook.com -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Encryptor</title>
 
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+
 </head>
 
 <body>
 
-    <!-- Created by: Daniel Alejandro Martinez Castro -->
-    <!-- Email: danmtnezcas@outlook.com -->
+    <div id="logo">
 
-    <input id="input_text" type="text" value="">
-    <button id="button_encrypt">Encrypt</button>
-    <button id="button_decrypt">Decrypt</button>
-    <button id="button_copy">Copy</button>
-    <textarea id="view_area" name="" cols="30" rows="10"></textarea>
+        <img src="./images/Logo.svg" alt="">
+
+    </div>
+
+    <div id="inputText">
+
+        <textarea name="" id="input_text" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+
+        <!-- <input id="input_text" type="text" placeholder="Ingrese el texto aquí"> -->
+
+    </div>
+
+    <div id="viewArea">
+
+        <img id="man_img" src="./images/Muñeco.svg" alt="">
+        <p id="first_info_image">No message was found</p>
+        <p id="second_info_image">Enter the text you want to encrypt or decrypt</p>
+        <textarea name="" id="view_area" cols="30" rows="10" readonly></textarea>
+        <button id="button_copy">Copy</button>
+
+    </div>
+
+    <div id="info">
+
+        <img id="info_icono" src="./images/Vector.svg" alt="Information icon">
+        <p id="info_paragraph">Only lowercase letters and no accents</p>
+
+    </div>
+
+    <div id="buttons">
+
+        <button id="button_encrypt">Encrypt</button>
+        <button id="button_decrypt">Decrypt</button>
+
+    </div>
+    
 
     <script>
 
@@ -62,8 +98,19 @@
 
             }
 
-        view_area.value = encrypted_phrase;
-        input_text.value = "";
+            if(input_text.value != "") {
+
+                document.getElementById("man_img").style.display = "none";
+                document.getElementById("first_info_image").style.display = "none";
+                document.getElementById("second_info_image").style.display = "none";
+
+                input_text.value = "";
+                view_area.value = encrypted_phrase;
+
+                document.getElementById("view_area").style.display = "block";
+                document.getElementById("button_copy").style.display = "block";
+
+            }
             
         }
 
@@ -71,50 +118,61 @@
 
             // Variables para texto
             var user_phrase = input_text.value;
-            var dencrypted_phrase = "";
+            var decrypted_phrase = "";
 
             for (var position = 0; position < user_phrase.length; position++) {
 
                 if(user_phrase.substring(position, position + 2) == "ai") {
 
-                    dencrypted_phrase += "a";
+                    decrypted_phrase += "a";
                     position++;
 
                 }
                 else if(user_phrase.substring(position, position + 4) == "imes") {
 
-                    dencrypted_phrase += "i";
+                    decrypted_phrase += "i";
                     position += 3;
 
                 }
                 else if(user_phrase.substring(position, position + 4) == "ober") {
 
-                    dencrypted_phrase += "o";
+                    decrypted_phrase += "o";
                     position += 3;
                     
                 }
                 else if(user_phrase.substring(position, position + 4) == "ufat") {
 
-                    dencrypted_phrase += "u";
+                    decrypted_phrase += "u";
                     position += 3;
                     
                 }
                 else if(user_phrase.substring(position, position + 5) == "enter") {
 
-                    dencrypted_phrase += "e";
+                    decrypted_phrase += "e";
                     position += 4;
                     
                 }
                 else {
 
-                    dencrypted_phrase += user_phrase[position];
+                    decrypted_phrase += user_phrase[position];
 
                 }
 
             }
 
-            view_area.value = dencrypted_phrase;
-            input_text.value = "";
+            if(input_text.value != "") {
+
+                document.getElementById("man_img").style.display = "none";
+                document.getElementById("first_info_image").style.display = "none";
+                document.getElementById("second_info_image").style.display = "none";
+
+                input_text.value = "";
+                view_area.value = decrypted_phrase;
+
+                document.getElementById("view_area").style.display = "block";
+                document.getElementById("button_copy").style.display = "block";
+
+            }
 
         }
 
@@ -123,6 +181,13 @@
             view_area.select();
             document.execCommand("copy");
             view_area.value = "";
+
+            document.getElementById("view_area").style.display = "none";
+            document.getElementById("button_copy").style.display = "none";
+
+            document.getElementById("man_img").style.display = "block";
+            document.getElementById("first_info_image").style.display = "block";
+            document.getElementById("second_info_image").style.display = "block";
 
         }
 
@@ -134,6 +199,8 @@
         var view_area = document.getElementById("view_area");
 
         // Asiganar funciones a los botones al hacer clic
+        document.getElementById("view_area").style.display = "none";
+        document.getElementById("button_copy").style.display = "none";
         button_encrypt.onclick = encrypt;
         button_decrypt.onclick = decrypt;
         button_copy.onclick = copy;
