@@ -16,12 +16,127 @@
     <!-- Created by: Daniel Alejandro Martinez Castro -->
     <!-- Email: danmtnezcas@outlook.com -->
 
-    <input id="input_text" type="text" value="Ingrese el texto aquí">
+    <input id="input_text" type="text" value="">
     <button id="button_encrypt">Encrypt</button>
     <button id="button_decrypt">Decrypt</button>
+    <button id="button_copy">Copy</button>
     <textarea id="view_area" name="" cols="30" rows="10"></textarea>
 
     <script>
+
+        function encrypt() { 
+
+            // Variables para texto
+            var user_phrase = input_text.value;
+            var encrypted_phrase = "";
+            
+            for (var position = 0; position < user_phrase.length; position++) {
+
+                switch (user_phrase[position]) {
+
+                    case 'a':
+                    encrypted_phrase += "ai";
+                    break;
+
+                    case 'e':
+                    encrypted_phrase += "enter";
+                    break;
+
+                    case 'i':
+                    encrypted_phrase += "imes";
+                    break;
+
+                    case 'o':
+                    encrypted_phrase += "ober";
+                    break;
+
+                    case 'u':
+                    encrypted_phrase += "ufat";
+                    break;
+
+                    default:
+                    encrypted_phrase += user_phrase[position];
+                    break;
+
+                }
+
+            }
+
+        view_area.value = encrypted_phrase;
+        input_text.value = "";
+            
+        }
+
+        function decrypt() {
+
+            // Variables para texto
+            var user_phrase = input_text.value;
+            var dencrypted_phrase = "";
+
+            for (var position = 0; position < user_phrase.length; position++) {
+
+                if(user_phrase.substring(position, position + 2) == "ai") {
+
+                    dencrypted_phrase += "a";
+                    position++;
+
+                }
+                else if(user_phrase.substring(position, position + 4) == "imes") {
+
+                    dencrypted_phrase += "i";
+                    position += 3;
+
+                }
+                else if(user_phrase.substring(position, position + 4) == "ober") {
+
+                    dencrypted_phrase += "o";
+                    position += 3;
+                    
+                }
+                else if(user_phrase.substring(position, position + 4) == "ufat") {
+
+                    dencrypted_phrase += "u";
+                    position += 3;
+                    
+                }
+                else if(user_phrase.substring(position, position + 5) == "enter") {
+
+                    dencrypted_phrase += "e";
+                    position += 4;
+                    
+                }
+                else {
+
+                    dencrypted_phrase += user_phrase[position];
+
+                }
+
+            }
+
+            view_area.value = dencrypted_phrase;
+            input_text.value = "";
+
+        }
+
+        function copy() {
+
+            view_area.select();
+            document.execCommand("copy");
+            view_area.value = "";
+
+        }
+
+        // Crear variables para enlazar con los elementos de HTML
+        var input_text = document.getElementById("input_text");
+        var button_encrypt = document.getElementById("button_encrypt");
+        var button_decrypt = document.getElementById("button_decrypt");
+        var button_copy = document.getElementById("button_copy");
+        var view_area = document.getElementById("view_area");
+
+        // Asiganar funciones a los botones al hacer clic
+        button_encrypt.onclick = encrypt;
+        button_decrypt.onclick = decrypt;
+        button_copy.onclick = copy;
 
     </script>
 
