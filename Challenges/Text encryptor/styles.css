@@ -85,6 +85,7 @@ body {
     height: 29px;
     left: 32px;
     top: 579px;
+    margin: 0px 0px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -95,12 +96,6 @@ body {
     text-align: center;
     color: #343A40;
 
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 0px;
-
 }
 
 #viewArea #second_info_image {
@@ -110,6 +105,7 @@ body {
     height: 48px;
     left: 32px;
     top: 624px;
+    margin: 0px 0px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -119,12 +115,6 @@ body {
 
     text-align: center;
     color: #495057;
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 0px;
 
 }
 
@@ -154,15 +144,13 @@ body {
 
 #viewArea #button_copy {
 
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-
     position: absolute;
     width: 336px;
     height: 67px;
     left: 32px;
     top: 845px;
+    padding: 24px;
+    margin: 0px 8px;
 
     border: 1px solid #0A3871;
     box-sizing: border-box;
@@ -177,11 +165,6 @@ body {
     text-align: center;
 
     color: #0A3871;
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-    margin: 0px 8px;
 
     cursor: pointer;
 
@@ -204,15 +187,12 @@ body {
 
 #buttons #button_encrypt {
 
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 22px;
-
     position: absolute;
     width: 328px;
     height: 67px;
     left: 0px;
     top: 0px;
+    padding: 22px;
 
     background: #0A3871;
     border-radius: 24px;
@@ -232,15 +212,12 @@ body {
 
 #buttons #button_decrypt {
 
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 22px;
-
     position: absolute;
     width: 328px;
     height: 67px;
     left: 352px;
     top: 0px;
+    padding: 22px;
 
     background: #D8DFE8;
 
@@ -263,16 +240,13 @@ body {
 
 #info {
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-
     position: absolute;
     width: 229px;
     height: 18px;
     left: 240px;
     top: 851px;
+    padding: 0px;
+
 }
 
 #info #info_icono {
@@ -283,10 +257,6 @@ body {
     left: 0px;
     top: 1px;
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-
 }
 
 #info #info_paragraph {
@@ -296,6 +266,7 @@ body {
     height: 18px;
     left: 24px;
     top: 0px;
+    margin: 0px 0px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -305,8 +276,4 @@ body {
     color: #495057;
     opacity: 0.8;
 
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
 }
