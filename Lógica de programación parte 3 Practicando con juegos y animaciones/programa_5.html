@@ -15,18 +15,14 @@
         //var x = 20;
 
         function disenharCircunferencias(x, y, radio, color) {
-
             pincel.fillStyle = color;
             pincel.beginPath();
             pincel.arc(x, y, radio, 0, 2*Math.PI);
             pincel.fill();
-
         }
 
         function limpiarPantalla() {
-
             pincel.clearRect(0, 0, 600, 400)
-
         }
 
         function disenharObjetivo(x, y) {
@@ -40,7 +36,6 @@
         }
 
         function actualizarPantalla() {
-
             limpiarPantalla();
             pincel.fillStyle = "lightgrey"
             pincel.fillRect(0, 0, 600, 400);
@@ -48,7 +43,6 @@
             yAleatorio = sortearPosicion(400);
             disenharObjetivo(xAleatorio, yAleatorio);
             x++;
-
         }
 
         function disparar(evento) {
